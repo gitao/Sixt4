@@ -1,0 +1,9 @@
+bin/
+obj/
+packages/
+TestResults/
+*.suo
+*.csproj.user
+*.sln.docstates
+*.VisualState.xml
+Thumbs.db
