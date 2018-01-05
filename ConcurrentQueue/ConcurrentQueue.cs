@@ -44,7 +44,6 @@ namespace Sixt4.TestAssignment
             }
         }
 
-
         public List<T> DequeueAll(int millisecondTimeout)
         {
             List<T> values = new List<T>();
@@ -56,6 +55,11 @@ namespace Sixt4.TestAssignment
             return values;
         }
 
+        public int Count()
+        {
+            return list.Count;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return list.GetEnumerator();
@@ -64,11 +68,6 @@ namespace Sixt4.TestAssignment
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
-        }
-
-        public int Count()
-        {
-            return list.Count;
-        }
+        }        
     }
 }
