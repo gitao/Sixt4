@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Sixt4.TestAssignment
 {
-    public class ConcurrentQueue<T>
+    public class ConcurrentQueue<T> : IEnumerable<T>
     {
         private Queue<T> list = new Queue<T>();
 
@@ -54,6 +54,16 @@ namespace Sixt4.TestAssignment
             }
 
             return values;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return list.GetEnumerator();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
 
         public int Count()

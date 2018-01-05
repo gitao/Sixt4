@@ -30,6 +30,7 @@ namespace Sixt4.TestAssignment.Test
             await Task.WhenAll(tasks);
 
             Assert.IsTrue(range.Count<int>() == list.Count());
+            Assert.IsTrue(range.SequenceEqual<int>(list));
         }
 
         [TestMethod]
@@ -54,6 +55,7 @@ namespace Sixt4.TestAssignment.Test
             await Task.WhenAll(tasks);
 
             Assert.IsTrue(range.Count<int>() == list.Count());
+            Assert.IsTrue(range.SequenceEqual<int>(list));
         }
 
         [TestMethod]
@@ -119,6 +121,7 @@ namespace Sixt4.TestAssignment.Test
             await Task.WhenAll(tasks);
 
             Assert.IsTrue(range.Count<int>() == (tasks[1] as Task<List<int>>).Result.Count());
+            Assert.IsTrue(range.SequenceEqual<int>((tasks[1] as Task<List<int>>).Result));
         }
     }
 }
